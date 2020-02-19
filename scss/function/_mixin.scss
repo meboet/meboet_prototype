@@ -1,0 +1,18 @@
+//メディアクエリ
+$mq-bp: (
+   'sp': 350px,
+   'small': 375px,
+   'medium': 768px,
+   'large': 1024px,
+   'pc': 1280px
+);
+@mixin mq($bp: medium) {
+   @media screen and (max-width: #{map-get($mq-bp, $bp)}){
+      @content;
+   }
+}
+@mixin mqmin($bp: medium) {
+   @media screen and (min-width: #{map-get($mq-bp, $bp)}){
+      @content;
+   }
+}
